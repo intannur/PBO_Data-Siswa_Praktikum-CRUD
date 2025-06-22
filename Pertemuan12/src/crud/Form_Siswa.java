@@ -20,9 +20,19 @@ public class Form_Siswa extends javax.swing.JFrame {
     CRUD aa = new CRUD();
     
     public Form_Siswa() throws SQLException {
-        initComponents();
-        tampil_database();
-    }
+// mengecek sudah login atau belum
+// jika belum login akan di redirect ke form login
+if (Session.getStatusLogin() == "AKTIF")
+{ initComponents();
+tampil_database();
+} else {
+// menutup form tanpa keluar dari aplikasi
+dispose();
+// memanggil form login
+FormLogin form = new FormLogin();
+form.setVisible(true);
+}
+}
     // method untuk menampilkan data ke tabel_siswa [JTable]
     public void tampil_database(){
         Object [] baris = {"ID","Nama","Alamat"};
@@ -369,10 +379,7 @@ public class Form_Siswa extends javax.swing.JFrame {
     }//GEN-LAST:event_tabel_siswaMouseClicked
 
     private void btn_keluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_keluarActionPerformed
-        if (JOptionPane.showConfirmDialog(null, "Apakah Anda yakin akan keluar ?","Warning",2)
-        == JOptionPane.YES_OPTION){
-        System.exit(0);
-        }
+        dispose();
     }//GEN-LAST:event_btn_keluarActionPerformed
 
     private void btn_semuadataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_semuadataActionPerformed

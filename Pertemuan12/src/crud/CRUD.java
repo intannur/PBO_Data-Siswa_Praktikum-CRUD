@@ -131,3 +131,4 @@ public class CRUD extends SiswaAbstract implements SiswaInterface {
     return CRUDhasil;
 }
 }
+

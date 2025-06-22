@@ -14,11 +14,11 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        try{
-            Form_Siswa form = new Form_Siswa();
-            form.setVisible(true);
-        } catch(Exception ex){
-            System.out.println(ex.toString());
+        try{ // Form_Siswa form = new Form_Siswa ();
+        FormLogin form = new FormLogin();
+        form.setVisible(true);
+        }catch(Exception ex){
+        System.out.println(ex.toString());
         }
     }
     
